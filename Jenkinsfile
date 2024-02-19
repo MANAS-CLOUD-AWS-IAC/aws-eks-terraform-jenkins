@@ -45,10 +45,12 @@ pipeline {
        }
 
         // 
-        stage ("Terraform Action"){
-        steps {
-            echo "Terraform action parameter is --> ${action}"
-            sh("terraform ${action} --auto-approve");
+        stage ('Destroy') {
+            steps {
+                echo "Terraform action parameter is --> ${action}"
+                sh("terraform ${action} --auto-approve");
+            }
+        }
     }
 
   }
