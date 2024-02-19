@@ -48,7 +48,7 @@ pipeline {
         stage ('Destroy') {
             steps {
                 echo "Terraform action parameter is --> ${action}"
-                sh("terraform ${action} --auto-approve");
+                sh("terraform ${action} -target TF-Instance --auto-approve");
             }
         }
     }
