@@ -52,7 +52,7 @@ pipeline {
 
         stage('Destroy') {
             steps {
-                sh "pwd;cd terraform/ ; terraform destroy"
+                sh "pwd;cd terraform/ ; terraform destroy -input=false"
             }
         }
     }
