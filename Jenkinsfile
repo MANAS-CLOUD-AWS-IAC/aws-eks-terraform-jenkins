@@ -48,7 +48,7 @@ pipeline {
         stage ('Destroy') {
             steps {
                 echo "Terraform action parameter is --> ${action}"
-                sh("terraform ${action} -target "i-0a36863f0def88757" --auto-approve");
+                sh("terraform ${action} -target 'i-0a36863f0def88757' --auto-approve");
             }
         }
     }
