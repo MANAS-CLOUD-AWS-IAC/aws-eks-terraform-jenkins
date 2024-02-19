@@ -44,17 +44,11 @@ pipeline {
            }
        }
 
-        stage('Apply') {
-            steps {
-                sh "pwd;cd terraform/ ; terraform apply -input=false tfplan"
-            }
-        }
-
-        stage('Destroy') {
-            steps {
-                sh "pwd;cd terraform/ ; terraform destroy -input=false"
-            }
-        }
+        // 
+        stage ("Terraform Action"){
+        steps {
+            echo "Terraform action parameter is --> ${action}"
+            sh("terraform ${action} --auto-approve");
     }
 
   }
